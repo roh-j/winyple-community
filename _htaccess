@@ -1,0 +1,8 @@
+SetEnvIF Referer "winyple.com" pass
+SetEnvIF Referer "google.com" pass
+SetEnvIFNoCase Referer "^$" pass
+<FilesMatch ".(jpg|gif|png)$">
+Order deny,allow
+deny from all
+allow from env=pass
+</FilesMatch>
